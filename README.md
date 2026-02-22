@@ -1,8 +1,11 @@
-# Blueprint Assembly — FreeCAD Python Macro
+# Blueprint Assembly for Epitrope — FreeCAD Python Macro
 
 A procedurally generated 3D model recreating an exploded technical assembly diagram, built entirely from a single Python script run inside FreeCAD.
 
 ---
+<img width="744" height="1052" alt="image" src="https://github.com/user-attachments/assets/924a0658-cd62-474b-a1c2-9e5ae3cbfe4b" />
+
+
 
 ## What It Models
 
