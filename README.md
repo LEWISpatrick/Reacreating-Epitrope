@@ -5,6 +5,7 @@ A procedurally generated 3D model recreating an exploded technical assembly diag
 ---
 <img width="744" height="1052" alt="image" src="https://github.com/user-attachments/assets/924a0658-cd62-474b-a1c2-9e5ae3cbfe4b" />
 
+<img width="1470" height="956" alt="Screenshot 2026-03-19 at 9 31 44 PM" src="https://github.com/user-attachments/assets/2abf97bc-17ae-4ca9-8d7d-529404539e67" />
 
 
 ## What It Models
@@ -45,16 +46,59 @@ The assembly is based on a multi-layer exploded blueprint and covers 24 componen
 - No additional Python packages — uses only the built-in `FreeCAD` and `Part` modules
 
 ---
+📥 1. Clone the Project
 
-## How to Run
+Open terminal (inside VS Code or normal terminal):
 
-1. Open FreeCAD
-2. Go to **Tools → Macro → Macros...**
-3. Click **Create** or **Open** and load `blueprint_assembly.py`
-4. Click **Execute**
+git clone https://github.com/your-repo/Freecadproject.git
+cd Freecadproject
 
-The script will generate all objects, recompute the document, and fit the isometric view automatically.
+Then open it in VS Code:
 
+code .
+📦 2. Install / Setup
+
+No Python packages needed — this script uses FreeCAD’s built-in Python environment.
+
+Just make sure:
+
+FreeCAD is installed in /Applications/FreeCAD.app (Mac)
+
+Or adjust path if different
+
+▶️ 3. Run the Script (3 Options)
+✅ Option A — Easiest (Recommended)
+
+Open FreeCAD GUI:
+
+Launch FreeCAD
+
+Go to:
+
+Tools → Macro → Execute Macro
+
+Select:
+
+blueprint_assembly_part2.py
+
+✔️ This is the most stable method
+
+⚡ Option B — Run from VS Code Terminal
+
+Inside your project folder:
+
+/Applications/FreeCAD.app/Contents/MacOS/FreeCAD blueprint_assembly_part2.py
+
+✔️ This is what your logs show — and it works
+
+You should see:
+
+Blueprint Assembly — generation complete!
+Objects created : 144
+🧠 Option C — Headless (advanced)
+/Applications/FreeCAD.app/Contents/MacOS/FreeCADCmd blueprint_assembly_part2.py
+
+Runs without full GUI (faster, but no visual preview).
 ---
 
 ## Colour Guide
