@@ -1,6 +1,6 @@
 # Blueprint Assembly for Epitrope — FreeCAD Python Macro
 
-A procedurally generated 3D model recreating an exploded technical assembly diagram, built entirely from a single Python script run inside FreeCAD.
+A fully procedural 3D assembly that recreates an exploded technical blueprint, generated entirely from a single Python script executed inside FreeCAD.
 
 ---
 <img width="744" height="1052" alt="image" src="https://github.com/user-attachments/assets/924a0658-cd62-474b-a1c2-9e5ae3cbfe4b" />
@@ -27,23 +27,92 @@ The assembly is based on a multi-layer exploded blueprint and covers 24 componen
 - LoRa, Cellular Data Connection, Data Cable terminator
 - Console / CRT monitor with stand and keyboard
 
-**Power Section**
-- 6× 5V LiIon Battery Pack (cylindrical cells in tray)
-- AC-DC Converter with heat-sink fins
-- SPDT Power Isolation Relays ×2
+### Power Section
 
-**Base**
-- MIL-A-12560 Ballistic Steel Base
-- Concrete Base
-- 4× Cantilever Load Cells
-- 4× Steel Legs
+* 6× 5V Li-Ion battery packs (cylindrical cells)
+* AC-DC converter with heat sink fins
+* SPDT power isolation relays ×2
+
+### Base
+
+* Ballistic steel base plate
+* Concrete base layer
+* 4× cantilever load cells
+* 4× steel support legs
 
 ---
 
 ## Requirements
 
-- [FreeCAD](https://www.freecad.org/) 0.20 or later
-- No additional Python packages — uses only the built-in `FreeCAD` and `Part` modules
+* FreeCAD 0.20 or newer
+* No external dependencies
+
+This project uses only:
+
+* `FreeCAD`
+* `Part`
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/your-repo/Freecadproject.git
+cd Freecadproject
+/Applications/FreeCAD.app/Contents/MacOS/FreeCAD blueprint_assembly_part2.py
+```
+
+---
+
+## Setup Notes
+
+This is **not a standard Python project**.
+
+* No `pip install`
+* No `requirements.txt`
+* No virtual environments
+
+The script must run using FreeCAD’s bundled Python interpreter.
+
+### macOS Default Path
+
+```
+/Applications/FreeCAD.app/Contents/MacOS/FreeCAD
+```
+
+### Important
+
+❌ This will NOT work:
+
+```bash
+python3 blueprint_assembly_part2.py
+```
+
+✅ This WILL work:
+
+```bash
+/Applications/FreeCAD.app/Contents/MacOS/FreeCAD blueprint_assembly_part2.py
+```
+
+### Custom Install Path
+
+If FreeCAD is installed elsewhere, replace the path:
+
+```bash
+/path/to/FreeCAD blueprint_assembly_part2.py
+```
+
+### Optional Shortcut
+
+```bash
+ln -s /Applications/FreeCAD.app/Contents/MacOS/FreeCAD /usr/local/bin/freecad
+```
+
+Then run:
+
+```bash
+freecad blueprint_assembly_part2.py
+```
 
 ---
 📥 1. Clone the Project
@@ -101,41 +170,41 @@ Objects created : 144
 Runs without full GUI (faster, but no visual preview).
 ---
 
-## Colour Guide
+## Color Guide
 
-| Colour | Components |
-|--------|-----------|
-| Magenta | ABS skin, load cells, steel legs |
-| Green | Concrete layers, Ethernet shields |
-| Cyan | Ballistic steel, electronics stack |
-| Red | Connectivity cluster (Starlink, LoRa, console) |
-| Orange | Power components (batteries, converter, relays) |
-| Yellow | PCB modules (Teensy, Taidecent, converter) |
-| Silver | Metal hardware, connectors, masts |
-| Dark Gray | Faraday cage, screen bezels |
+| Color     | Components                         |
+| --------- | ---------------------------------- |
+| Magenta   | ABS skin, load cells, steel legs   |
+| Green     | Concrete layers, Ethernet shields  |
+| Cyan      | Ballistic steel, electronics stack |
+| Red       | Connectivity cluster               |
+| Orange    | Power components                   |
+| Yellow    | PCB modules                        |
+| Silver    | Metal hardware, connectors         |
+| Dark Gray | Faraday cage, display bezels       |
 
 ---
 
-## Exporting for Rendering
+## Exporting
 
-Once generated, export via **File → Export** and choose your format:
+Use **File → Export** and choose:
 
-- **STEP (.step)** — best for CAD tools and Fusion 360
-- **OBJ (.obj)** — best for Blender, KeyShot, or game engines
-- **STL (.stl)** — best for 3D printing prep
+* **STEP (.step)** — CAD workflows
+* **OBJ (.obj)** — rendering / game engines
+* **STL (.stl)** — 3D printing
 
 ---
 
 ## Tips
 
-- **View → Draw Style → Shaded** for solid rendering
-- **View → Draw Style → Wireframe** to inspect hollow shell layers
-- Press **Space** on any object in the Model tree to toggle visibility
-- The electronics stack, power section, and connectivity cluster are each spatially separated, making it easy to isolate sections for individual renders
+* Use **Shaded mode** for solid visualization
+* Use **Wireframe mode** to inspect internal layers
+* Press **Space** on objects to toggle visibility
+* Each subsystem is spatially separated for easy isolation and rendering
 
 ---
 
-## File
+## Project Files
 
 | File | Description |
 |------|-------------|
